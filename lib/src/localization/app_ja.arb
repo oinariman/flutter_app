@@ -1,0 +1,7 @@
+{
+  "appTitle": "flutter_app",
+  "@appTitle": {
+    "description": "アプリのタイトル"
+  },
+  "demoString": "デモ文字列"
+}
