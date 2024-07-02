@@ -1,0 +1,4 @@
+# mise-en-place で flutter のバージョンをチームで統一するための設定ファイル
+# https://mise.jdx.dev/dev-tools/
+flutter 3.22.1-stable
+cocoapods 1.15.2
