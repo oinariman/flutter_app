@@ -1,7 +1,8 @@
 {
-  "appTitle": "flutter_app",
+  "appTitle": "フラッター・アプリ",
   "@appTitle": {
     "description": "アプリのタイトル"
   },
-  "demoString": "デモ文字列"
+  "commonRefresh": "更新",
+  "homePageTitle": "ホームページ"
 }

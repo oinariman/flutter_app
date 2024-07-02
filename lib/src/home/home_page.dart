@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:auto_route/auto_route.dart';
 import 'home_view_model.dart';
@@ -9,9 +10,10 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final homeViewModel = ref.watch(homeViewModelProvider);
     return Scaffold(
-        appBar: AppBar(title: const Text('HomePage')),
+        appBar: AppBar(title: Text(l10n.homePageTitle)),
         body: Center(
             child: SingleChildScrollView(
                 child: Column(children: [
@@ -22,7 +24,7 @@ class HomePage extends ConsumerWidget {
           OutlinedButton(
               onPressed: () =>
                   ref.read(homeViewModelProvider.notifier).refresh(),
-              child: const Text('Refresh')),
+              child: Text(l10n.commonRefresh)),
         ]))));
   }
 }
