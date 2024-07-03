@@ -14,24 +14,19 @@ class HomePage extends ConsumerWidget {
     final homeViewModel = ref.watch(homeViewModelProvider);
     return Scaffold(
         appBar: AppBar(title: Text(l10n.homePageTitle)),
-        body: Center(
-            child: SingleChildScrollView(
-                child: Column(children: [
-          OutlinedButton(
-              onPressed: () =>
-                  ref.read(homeViewModelProvider.notifier).refresh(),
-              child: Text(l10n.commonRefresh)),
-          homeViewModel.when(
-              data: (data) {
-                return Column(
-                    children: data
-                        .map((article) => ListTile(
-                            title: Text(article.title),
-                            subtitle: Text(article.updatedAt)))
-                        .toList());
-              },
-              loading: () => const CircularProgressIndicator(),
-              error: (error, _) => Text('Error: $error')),
-        ]))));
+        body: RefreshIndicator(
+            onRefresh: () => ref.refresh(homeViewModelProvider.future),
+            child: homeViewModel.when(
+                data: (articles) => ListView.separated(
+                    itemCount: articles.length,
+                    separatorBuilder: (context, index) => const Divider(),
+                    itemBuilder: (context, index) {
+                      final article = articles[index];
+                      return ListTile(
+                          title: Text(article.title),
+                          subtitle: Text(article.createdAt));
+                    }),
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (error, _) => Center(child: Text(error.toString())))));
   }
 }
