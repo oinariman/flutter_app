@@ -7,7 +7,7 @@ part of 'qiita_repository_impl.dart';
 // **************************************************************************
 
 String _$qiitaRepositoryImplHash() =>
-    r'006de0d1b822527fb2114b0070c52b5a2511d122';
+    r'a8b6e428e694d2117a80c460f67499d990e8743b';
 
 /// See also [QiitaRepositoryImpl].
 @ProviderFor(QiitaRepositoryImpl)
