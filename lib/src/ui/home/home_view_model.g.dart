@@ -6,12 +6,12 @@ part of 'home_view_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeViewModelHash() => r'ef9d581f44cc79d60046edd2531c2b974d287c7f';
+String _$homeViewModelHash() => r'a9a29885f381c41fb51afaf5ceea8392c5fab86e';
 
 /// See also [HomeViewModel].
 @ProviderFor(HomeViewModel)
 final homeViewModelProvider =
-    AutoDisposeAsyncNotifierProvider<HomeViewModel, String>.internal(
+    AutoDisposeAsyncNotifierProvider<HomeViewModel, List<Article>>.internal(
   HomeViewModel.new,
   name: r'homeViewModelProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -21,6 +21,6 @@ final homeViewModelProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$HomeViewModel = AutoDisposeAsyncNotifier<String>;
+typedef _$HomeViewModel = AutoDisposeAsyncNotifier<List<Article>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
